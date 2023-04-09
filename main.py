@@ -10,7 +10,7 @@ app = Flask(__name__)
 def search():
 
 # Load the GTRS_Final_Model file
-    model = joblib.load('GTRS_Final_Model.joblib2')
+    # model = joblib.load('GTRS_Final_Model.joblib2')
 
     # # Create a sample DataFrame for prediction
     df = pd.DataFrame({'feat1': [1, 2, 3], 'feat2': [4, 5, 6], 'feat3': [7, 8, 9]})
