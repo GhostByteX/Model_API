@@ -234,7 +234,7 @@ class TWC_GTRS_MODEL:
         #beta = 0.44
         #target_col = 'churn value'
         #pred = model.predict_label(final_prob,alpha,beta)
-        res=0
+        res=1
         return res
     
     
