@@ -15,6 +15,8 @@ from sklearn.metrics import classification_report
 
 
 class TWC_GTRS_MODEL:
+    def __init__(self):
+        pass
     # def preproc (self,df):
     #     df.columns = df.columns.str.lower()
     #     columns_to_drop = ["customer id", "internet service",
