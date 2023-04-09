@@ -6,11 +6,6 @@ import joblib
 app = Flask(__name__)
 
 
-# @app.route('/', methods=['GET'])
-# def index():
-#     return 'Welcome to my Flask app!'
-
-
 @app.route('/', methods=['GET'])
 def search():
 
