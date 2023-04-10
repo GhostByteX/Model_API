@@ -227,7 +227,8 @@ class TWC_GTRS_MODEL:
         
         
     def predict(self,pred_df):
-        #model = TWC_GTRS_MODEL()
+        model = TWC_GTRS_MODEL()
+        print(pred_df.head())
         #pred_df,X,y = model.predict_preproc(pred_df)
         #final_prob = model.predict_fit(pred_df,X,y)
         #alpha = 0.61

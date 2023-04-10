@@ -7,14 +7,14 @@ import joblib
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def search():
 
 # Load the GTRS_Final_Model file
     model = TWC_GTRS_MODEL()
 
     # # Create a sample DataFrame for prediction
-    df = pd.DataFrame({'feat1': [1, 2, 3], 'feat2': [4, 5, 6], 'feat3': [7, 8, 9]})
+    df = pd.read_csv('dataset2.csv')
     
     # # Make predictions using the model
     predictions = model.predict(df)
