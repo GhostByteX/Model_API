@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
 from GTRS import TWC_GTRS_MODEL
+from flask_cors import CORS
 import pandas as pd
 import joblib
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route('/', methods=['GET'])
 def search():
