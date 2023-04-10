@@ -10,20 +10,16 @@ CORS(app)
 @app.route('/', methods=['POST'])
 def search():
 
-# Load the GTRS_Final_Model file
+    data = request.get_json()
+    gender = data['gender']
+    print(data,gender)
+    my_df =  pd.json_normalize(data)
+    print(my_df)
+
     model = TWC_GTRS_MODEL()
-
-    # # Create a sample DataFrame for prediction
     df = pd.read_csv('dataset2.csv')
-    
-    # # Make predictions using the model
     predictions = model.predict(df)
-    
-
-    # print(predictions)
-    
-    # query = request.args.get('q')
-    results = predictions # your search logic here, e.g. querying a database or calling an API
+    results = predictions
     return jsonify({'results': results})
 
 if __name__ == '__main__':
