@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from GTRS import TWC_GTRS_MODEL
+from GTRS2 import TWC_GTRS_MODEL
 from flask_cors import CORS
 import pandas as pd
 import joblib
