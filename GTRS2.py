@@ -6,7 +6,6 @@ from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import OrdinalEncoder
 import warnings
-import matplotlib.pyplot as plt
 import pickle
 
 warnings.filterwarnings('ignore')
