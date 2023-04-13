@@ -234,6 +234,7 @@ class TWC_GTRS_MODEL:
 
     def predict_preproc(self, pred_df):
         pred_df.columns = pred_df.columns.str.lower()
+        print(pred_df.columns)
         columns_to_drop = ["customer id", "internet service",
                            "gender", "under 30", "senior citizen",
                            "churn category", "churn reason", "customer satisfaction", "unlimited data", "total refunds",
@@ -301,11 +302,10 @@ class TWC_GTRS_MODEL:
 
         df4['final_prob'] = 0
         cp_cols = [col for col in df4.columns if col.startswith('cp_')]
-        arithmetic_mean = (df4[cp_cols].mean(axis=1) + (df4[cp_cols].mean(axis=1) * 0.75)) % 1
+        arithmetic_mean = (df4[cp_cols].mean(axis=1) + (df4[cp_cols].mean(axis=1) * 0.75) -1)
         df4['final_prob'] = arithmetic_mean 
         final_prob = df4['final_prob']
         print(final_prob)
-        print(df4.head())
         return final_prob
 
     def predict_label(self, prob, alpha, beta):

@@ -11,14 +11,9 @@ CORS(app)
 def search():
 
     data = request.get_json()
-    gender = data['gender']
-    print(data,gender)
     my_df =  pd.json_normalize(data)
-    print(my_df)
-
     model = TWC_GTRS_MODEL()
-    df = pd.read_csv('dataset2.csv')
-    predictions = model.predict(df)
+    predictions = model.predict(my_df)
     results = predictions
     return jsonify({'results': results})
 
