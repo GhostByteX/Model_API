@@ -234,6 +234,7 @@ class TWC_GTRS_MODEL:
 
     def predict_preproc(self, pred_df):
         pred_df.columns = pred_df.columns.str.lower()
+        print(pred_df.head())
         # columns_to_drop = ["customer id", "internet service",
         #                    "gender", "under 30", "senior citizen",
         #                    "churn category", "churn reason", "customer satisfaction", "unlimited data", "total refunds",
