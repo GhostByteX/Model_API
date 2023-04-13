@@ -7,7 +7,7 @@ import joblib
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST','GET'])
 def search():
 
     data = request.get_json()
