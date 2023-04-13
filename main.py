@@ -7,11 +7,12 @@ import joblib
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/', methods=['POST','GET'])
+@app.route('/', methods=['POST'])
 def search():
 
     data = request.get_json()
     my_df =  pd.json_normalize(data)
+    print(my_df.head())
     model = TWC_GTRS_MODEL()
     predictions = model.predict(my_df)
     results = predictions
