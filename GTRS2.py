@@ -234,16 +234,16 @@ class TWC_GTRS_MODEL:
 
     def predict_preproc(self, pred_df):
         pred_df.columns = pred_df.columns.str.lower()
-        print(pred_df.head())
-        # columns_to_drop = ["customer id", "internet service",
-        #                    "gender", "under 30", "senior citizen",
-        #                    "churn category", "churn reason", "customer satisfaction", "unlimited data", "total refunds",
-        #                    "total customer svc requests", "streaming tv", "streaming movies",
-        #                    "product/service issues reported", "premium tech support"
-        #     , "phone service", "online security", "online backup", "offer", "multiple lines", "married",
-        #                    "device protection plan"]
-        # pred_df.drop(columns_to_drop, inplace=True, axis=1)
-        # print(pred_df.info())
+       
+        columns_to_drop = ["customer id", "internet service",
+                           "gender", "under 30", "senior citizen",
+                           "churn category", "churn reason", "customer satisfaction", "unlimited data", "total refunds",
+                           "total customer svc requests", "streaming tv", "streaming movies",
+                           "product/service issues reported", "premium tech support"
+            , "phone service", "online security", "online backup", "offer", "multiple lines", "married",
+                           "device protection plan"]
+        pred_df.drop(columns_to_drop, inplace=True, axis=1)
+        
         numerical_columns = [column for column in pred_df.columns if pred_df[column].dtype != "object"]
         categorical_columns = [column for column in pred_df.columns if pred_df[column].dtype == "object"]
         top_city = list(pred_df["city"].value_counts().sort_values(ascending=False).head(15).index)

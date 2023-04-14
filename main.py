@@ -10,9 +10,9 @@ CORS(app)
 @app.route('/', methods=['POST'])
 def search():
 
-    data = request.get_json()
-    my_df =  pd.json_normalize(data)
-    print(my_df.head())
+    # data = request.get_json()
+    # my_df =  pd.json_normalize(data)
+    my_df = pd.read_csv('dataset2.csv')
     model = TWC_GTRS_MODEL()
     predictions = model.predict(my_df)
     results = predictions
